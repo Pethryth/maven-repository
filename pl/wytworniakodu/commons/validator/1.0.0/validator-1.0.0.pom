@@ -6,7 +6,7 @@
 
     <groupId>pl.wytworniakodu.commons</groupId>
     <artifactId>validator</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -49,7 +49,8 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.1</version>
                 <configuration>
-                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo
+                    </altDeploymentRepository>
                 </configuration>
             </plugin>
             <plugin>
@@ -58,10 +59,12 @@
                 <version>0.11</version>
                 <configuration>
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
-                    <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+                    <outputDirectory>${project.build.directory}/mvn-repo
+                    </outputDirectory> <!-- matches distribution management repository url above -->
                     <branch>refs/heads/master</branch>                       <!-- remote branch name -->
-                    <includes><include>**/*</include></includes>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
                     <repositoryName>maven-repository</repositoryName>
                     <repositoryOwner>Pethryth</repositoryOwner>
                     <userName>Pethryth</userName>
